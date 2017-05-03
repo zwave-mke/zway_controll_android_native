@@ -1,0 +1,59 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="52dp"
+    android:gravity="end" >
+
+    <mehdi.sakout.fancybuttons.FancyButton
+        android:id="@+id/device_item_flip_btn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:textSize="20sp"
+        fancy:fb_text=""
+        fancy:fb_radius="30dp"
+        fancy:fb_iconPaddingLeft="1dp"
+        fancy:fb_iconPaddingRight="1dp"
+        fancy:fb_iconPaddingTop="1dp"
+        fancy:fb_iconPaddingBottom="1dp"
+        fancy:fb_textGravity="center"
+        fancy:fb_textColor="@color/primary_text"
+        fancy:fb_defaultColor="@android:color/transparent"
+        fancy:fb_focusColor="@color/material_color_grey_dark"
+        fancy:fb_fontIconResource="&#xf0e2;"/>
+
+    <mehdi.sakout.fancybuttons.FancyButton
+        android:id="@+id/device_item_history_btn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:textSize="20sp"
+        fancy:fb_text=""
+        fancy:fb_radius="30dp"
+        fancy:fb_textGravity="center"
+        fancy:fb_textColor="@color/primary_text"
+        fancy:fb_defaultColor="@android:color/transparent"
+        fancy:fb_focusColor="@color/material_color_grey_dark"
+        fancy:fb_iconPaddingLeft="1dp"
+        fancy:fb_iconPaddingRight="1dp"
+        fancy:fb_iconPaddingTop="1dp"
+        fancy:fb_iconPaddingBottom="1dp"
+        fancy:fb_fontIconResource="&#xf080;" />
+
+    <mehdi.sakout.fancybuttons.FancyButton
+        android:id="@+id/device_item_move_btn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:textSize="20sp"
+        fancy:fb_text=""
+        fancy:fb_radius="30dp"
+        fancy:fb_iconPaddingLeft="1dp"
+        fancy:fb_iconPaddingRight="1dp"
+        fancy:fb_iconPaddingTop="1dp"
+        fancy:fb_iconPaddingBottom="1dp"
+        fancy:fb_textGravity="center"
+        fancy:fb_textColor="@color/primary_text"
+        fancy:fb_defaultColor="@android:color/transparent"
+        fancy:fb_focusColor="@color/material_color_grey_dark"
+        fancy:fb_fontIconResource="&#xf047;" />
+
+</LinearLayout>

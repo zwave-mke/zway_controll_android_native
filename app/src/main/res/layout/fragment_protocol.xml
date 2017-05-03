@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@drawable/selector_item_light"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp" >
+
+    <TextView
+        android:id="@+id/protocol_item_created"
+        android:layout_width="100dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        style="@style/Base.TextAppearance.AppCompat.Subhead" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_gravity="center_vertical">
+        <TextView
+            android:id="@+id/protocol_item_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="Text"
+            style="@style/Base.TextAppearance.AppCompat.Subhead"/>
+        <TextView
+            android:id="@+id/protocol_item_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="Category"/>
+    </LinearLayout>
+</LinearLayout>

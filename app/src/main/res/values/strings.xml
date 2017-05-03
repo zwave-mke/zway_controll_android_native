@@ -1,0 +1,740 @@
+<resources>
+    <string name="app_name">Hub App</string>
+
+    <string name="zway_firmware_update_required">Please update your Z-Way. version 2.3.0 is required!</string>
+
+    <!-- Fragment titles -->
+    <string name="fragment_dashboard_title">Dashboard</string>
+    <string name="fragment_elements_title">Elements</string>
+    <string name="fragment_locations_title">Locations</string>
+    <string name="fragment_notifications_title">Notifications</string>
+    <string name="fragment_settings_title">Settings</string>
+    <string name="fragment_settings_general_title">General</string>
+    <string name="fragment_settings_hubs_title">Hub\'s</string>
+    <string name="fragment_settings_geofencing_title">Geofencing</string>
+    <string name="fragment_settings_hubs_detail_title">Hub Detail</string>
+    <string name="fragment_protocol_title">Protocol</string>
+    <string name="fragment_map">Map: %1$s</string>
+    <string name="fragment_legal">Legal</string>
+    <string name="fragment_help_title">Help</string>
+    <string name="fragment_camera">Camera</string>
+
+    <!-- Constraints -->
+    <string name="constrain_device_type">Device Type</string>
+    <string name="constrain_tags">Tags</string>
+    <string name="constrain_sorting">Ordering</string>
+
+    <string name="constrain_notification_type">Type</string>
+    <string name="constrain_notification_source">Source</string>
+
+    <!-- Actions -->
+    <string name="action_save">Save</string>
+    <string name="action_clear">Clear</string>
+    <string name="action_delete">Delete</string>
+
+    <string-array name="filter_sorting">
+        <item>Custom</item>
+        <item>Oldest</item>
+        <item>Newest</item>
+        <item>Name ASC</item>
+        <item>Name DESC</item>
+        <item>Last updated</item>
+    </string-array>
+
+    <string name="devices_filter_device_type">Filter by device type</string>
+    <string name="devices_filter_device_type_reset">All elements</string>
+    <string name="devices_filter_no_device_types">No device types available!</string>
+
+    <string name="devices_filter_notification_source">Filter by notification source</string>
+    <string name="devices_filter_notification_source_reset">All elements</string>
+    <string name="devices_filter_no_device_sources">No devices available!</string>
+
+    <string name="device_type_battery">Battery</string>
+    <string name="device_type_doorlock">Doorlock</string>
+    <string name="device_type_thermostat">Thermostat</string>
+    <string name="device_type_switch_binary">Switch binary</string>
+    <string name="device_type_switch_multilevel">Switch multilevel</string>
+    <string name="device_type_sensor_binary">Sensor binary</string>
+    <string name="device_type_sensor_multilevel">Sensor multilevel</string>
+    <string name="device_type_switch_toggle">Switch toggle</string>
+    <string name="device_type_switch_control">Switch control</string>
+    <string name="device_type_toggle_button">Toggle button</string>
+    <string name="device_type_switch_rgbw">Switch RGBW</string>
+    <string name="device_type_text">Text</string>
+    <string name="device_type_camera">Camera</string>
+    <string name="device_type_sensor_discrete">Sensor discrete</string>
+    <string name="device_type_sensor_multiline">Information</string>
+
+    <string name="devices_filter_tags">Filter by tag</string>
+    <string name="devices_filter_tags_reset">All elements</string>
+    <string name="devices_filter_no_tags">No tags available!</string>
+
+    <string name="devices_sorting">Sort by</string>
+
+    <!-- Hub item -->
+    <string name="form_hub_item_title">Title</string>
+    <string name="form_hub_item_remote_service">Remote service</string>
+    <string name="form_hub_item_remote_id">Remote id</string>
+    <string name="form_hub_item_username">Username</string>
+    <string name="form_hub_item_password">Password</string>
+    <string name="form_hub_item_local_ip">IP address</string>
+    <string name="form_hub_item_hub_ssid">SSID</string>
+    <string name="form_hub_item_hub_wifi_password">Wifi password</string>
+    <string name="form_hub_item_hub_ip">IP address</string>
+
+    <string name="form_hub_item_configuration_not_complete">Please check the correctness of your data.</string>
+
+    <!-- Intro -->
+    <string name="intro_title">Welcome</string>
+    <string name="intro_permission">Permission to use the camera is required!</string>
+    <string name="intro_permission_btn">Grant permission</string>
+    <string name="intro_description">Please scan the QR code you find on your device or in the user setup of your web interface.</string>
+    <string name="intro_manual_description">Configure your device manually.</string>
+    <string name="intro_qr_code_btn">QR code</string>
+    <string name="intro_manual_btn">Manual</string>
+    <string name="intro_manual_login">Login</string>
+    <string name="intro_manual_remote_access">Access via remote service</string>
+    <string name="intro_manual_local_access">Access via local access</string>
+    <string name="intro_manual_hubs_wifi">Access via Wifi of the Hub</string>
+    <string name="intro_connect_btn">Connect</string>
+    <string name="intro_connecting">Connecting</string>
+    <string name="intro_finish_btn">Finish</string>
+    <string name="intro_details_btn">Details</string>
+
+    <string name="intro_manual_local_access_search_btn">Search for local Hub</string>
+    <string name="intro_manual_local_access_progress">Search for local access: %1$s</string>
+    <string name="intro_manual_local_access_results_title">Found locally available Hub\'s</string>
+    <string name="intro_manual_local_access_results_message">More than one hub found. Please select the one you want to configure.</string>
+    <string name="intro_manual_local_access_no_ip_selected">Please select a IP address first.</string>
+    <string name="intro_manual_local_access_no_ip_found">No local Hub found. Please try again or skip this step.</string>
+
+    <string name="intro_connecting_message_hub_already_exists">A Hub with this title or remote id already exists!</string>
+
+    <string name="intro_connecting_message_z_way_connection_established">Connection to Hub successfully established.</string>
+    <string name="intro_connecting_message_z_way_connection_failed">Connection to Hub failed! Please check the correctness of your data.</string>
+
+    <string name="intro_connecting_message_z_way_authentication_successful">Authentication was successful.</string>
+    <string name="intro_connecting_message_z_way_authentication_failed">Authentication failed! Please check the correctness of your data.</string>
+
+    <string name="intro_connecting_message_current_profile_loaded">Current profile successfully loaded.</string>
+    <string name="intro_connecting_message_current_profile_failed">Loading of current profile failed! Please check the correctness of your data.</string>
+
+    <string name="intro_connecting_message_device_data_loaded">All device data successfully loaded.</string>
+    <string name="intro_connecting_message_device_data_failed">Loading of device data failed! Please check the correctness of your data.</string>
+
+    <string name="intro_connecting_message_device_history_data_loaded">Device history of the last 24 hours successfully loaded.</string>
+    <string name="intro_connecting_message_device_history_data_failed">Loading of device history of the last 24 hours failed! Please check the correctness of your data.</string>
+
+    <string name="intro_connecting_message_icon_data_loaded">Icons successfully loaded.</string>
+    <string name="intro_connecting_message_icon_data_failed">Loading of icons failed! Please check the correctness of your data.</string>
+
+    <string name="intro_connecting_message_location_data_loaded">All location data successfully loaded.</string>
+    <string name="intro_connecting_message_location_data_failed">Loading of location data failed! Please check the correctness of your data.</string>
+
+    <string name="intro_connecting_message_notification_data_loaded">Notifications of the last 12 hours successfully loaded.</string>
+    <string name="intro_connecting_message_notification_data_failed">Loading of notifications of the last 12 hours failed! Please check the correctness of your data.</string>
+
+    <string name="intro_connecting_message_profile_data_loaded">All profile data successfully loaded.</string>
+    <string name="intro_connecting_message_profile_data_failed">Loading of profile data failed! Please check the correctness of your data.</string>
+
+    <string name="intro_connecting_message_app_registration_successfully">Setting up the Z-Way App needed for the notifications.</string>
+    <string name="intro_connecting_message_app_registration_failed">Setting up the Z-Way App failed!</string>
+
+    <string name="intro_connecting_message_initialize_hub_successfully">All actions have been successfully completed. The App is now ready for use.</string>
+
+    <string name="intro_check_access_via_wifi">Check access via WiFi of the Hub.</string>
+    <string name="intro_access_via_wifi_established">Access via Wifi of the Hub successfully established.</string>
+    <string name="intro_access_via_wifi_skip">Skip access via WiFi of the Hub.</string>
+
+    <string name="intro_check_access_via_remote">Check access via remote service.</string>
+    <string name="intro_access_via_remote_established">Access via remote service successfully established.</string>
+    <string name="intro_access_via_remote_skip">Skip access via remote service.</string>
+
+    <string name="intro_check_access_via_local">Check connection via local access.</string>
+    <string name="intro_access_via_local_established">Connection via local access successfully established.</string>
+    <string name="intro_access_via_local_skip">Skip connection via local access.</string>
+
+    <string name="intro_access_failed_with_all">Connection to Hub has failed with all variants.</string>
+    <string name="intro_access_successful_at_least_with_one">Connection to Hub successfully established at least with one variant.</string>
+
+    <string name="intro_setting_up_z_way_app">Setting up the Z-Way App needed for the notifications.</string>
+    <string name="intro_setting_up_z_way_app_internal_error">Sending the register command to the App resulted in an internal Z-Way error.</string>
+    <string name="intro_setting_up_z_way_firebase_unavailable">Firebase Cloud Messaging unavailable!</string>
+    <string name="intro_setting_up_z_way_unexpected_error">Unexpected error occurred during register App in Z-Way: %1$s.</string>
+
+    <string name="intro_connecting_details_title">System messages</string>
+
+    <!-- Common -->
+    <string name="back_button_twice">Press again to exit.</string>
+    <string name="confirm_delete">Delete %1$s. Are you sure?</string>
+    <string name="confirm_clear_notifications">Clear all notification data. Are you sure?</string>
+
+    <string name="unexpected_error">An unexpected error occurred! Please try again.</string>
+    <string name="please_wait">Please wait.</string>
+
+    <string name="operation_success_with_message">Operation successfully performed: %1$s.</string>
+    <string name="operation_success">Operation successfully performed.</string>
+    <string name="operation_failed">Operation failed! Please try again.</string>
+
+    <string name="all_loader_active">Synchronization is running. Please wait!</string>
+
+    <string name="note">Note</string>
+
+    <string name="close">Close</string>
+    <string name="change">Change</string>
+
+    <string name="permission_to_use_camera">Permission to use Camera</string>
+    <string name="permission_to_read_storage">Permission to read Storage</string>
+    <string name="permission_denied_by_user">Permission denied by user</string>
+
+    <string name="no_data">No data available.</string>
+    <string name="no_data_refresh_btn">Refresh</string>
+    <string name="warning_no_hub">No Hub configured!</string>
+
+    <string name="google_play_service_required">Google Play Services API required!</string>
+    <string name="z_way_module_required">Please install and add Hub App in Z-Way.</string>
+
+    <string name="validation_blank">%1$s is required!</string>
+    <string name="validation_min">%1$s is required (at least %2$s characters)!</string>
+    <string name="validation_number">%1$s must be a number!</string>
+    <string name="validation_invalid">%1$s is not valid!</string>
+    <string name="validation_match">%1$s not matching!</string>
+    <string name="validation_failed">Please check the correctness of your data.</string>
+
+    <string name="image_input_title">Select an image</string>
+    <string-array name="image_input">
+        <item>Select photo from gallery</item>
+        <item>Take picture with camera</item>
+        <item>Generate an image</item>
+    </string-array>
+
+    <!-- Connection messages -->
+    <string name="connection_connecting">Connecting</string>
+    <string name="connection_connected">Hub is connected.</string>
+    <string name="connection_not_connected">Hub is not connected.</string>
+    <string name="connection_not_connected_update">Hub is not connected. The data has not been updated.</string>
+
+    <string name="connection_unavailable">Connection to Hub is unavailable!</string>
+    <string name="connection_unauthorized">Authorization error!</string>
+    <string name="connection_configuration_error">Configuration not complete or not valid!</string>
+
+    <!-- Z-Way library messages -->
+    <string name="z_way_message_authentication_success">Successfully logged on to the system.</string>
+    <string name="z_way_message_api_error">Z-Way API error.</string>
+    <string name="z_way_message_api_error_http_status">Z-Way API error (HTTP status)</string>
+    <string name="z_way_message_api_error_authentication">Z-Way API error (Authentication)</string>
+    <string name="z_way_message_api_error_server_response">Z-Way API error (Server response)</string>
+
+    <!-- Fragment settings general -->
+    <string name="fragment_settings_general_view_starting_point_title">Start view</string>
+    <string name="fragment_settings_general_protocol_btn">Show protocol</string>
+
+    <string name="fragment_settings_general_about">About</string>
+    <string name="fragment_settings_general_open_source_message">Hub App Version 1.0 (30.04.2017)\r\n\r\nCopyright &#169; 2017 Z-Wave.Me\r\n\r\nDeveloped by Patrick Hecker\r\n\r\nHubApp is build using open source software:</string>
+    <string name="fragment_settings_general_open_source_btn">Open source software</string>
+
+    <string-array name="start_views">
+        <item>Dashboard</item>
+        <item>Elements</item>
+        <item>Locations</item>
+    </string-array>
+
+    <string name="fragment_settings_general_view_options_title">View settings</string>
+    <string name="fragment_settings_general_view_options_battery_info">Show battery info</string>
+
+    <!-- Fragment settings geofencing -->
+    <string name="fragment_settings_geofencing_phone_settings">Phone settings</string>
+    <string name="fragment_settings_geofencing_phone_settings_desc">Phone settings affect all homes.</string>
+    <string name="fragment_settings_geofencing_phone_settings_enabled">Geofencing enabled</string>
+    <string name="fragment_settings_geofencing_phone_settings_disabled">Geofencing disabled</string>
+    <string name="fragment_settings_geofencing_phone_name">Title / Image</string>
+    <string name="fragment_settings_geofencing_phone_name_desc">Title and image displayed in Z-Way, when the mobile phone is in a geofencing area of a home.</string>
+    <string name="fragment_settings_geofencing_phone_name_required">Please enter a phone title first!</string>
+    <string name="fragment_settings_geofencing_update_device_btn">Create/update Z-Way presence module</string>
+    <string name="fragment_settings_geofencing_phone_name_image_required">Phone title and image required!</string>
+    <string name="fragment_settings_geofencing_hub_location_undefined">Not all Hub\'s have a location configured! The location settings can be found in the Hub settings.</string>
+
+    <!-- Fragment settings Hub detail -->
+    <string name="fragment_settings_hub_detail_general">General information</string>
+    <string name="fragment_settings_hub_detail_user_account">User account</string>
+    <string name="fragment_settings_hub_detail_remote_connection">Remote connection</string>
+    <string name="fragment_settings_hub_detail_local_connection">Local connection</string>
+    <string name="fragment_settings_hub_detail_hubs_wifi">Hub\'s Wifi</string>
+    <string name="fragment_settings_hub_detail_location">Location</string>
+    <string name="fragment_settings_hub_detail_location_undefined">No location specified.</string>
+    <string name="fragment_settings_hub_detail_select_location">Press long to select a location.</string>
+
+    <!-- Fragment locations -->
+    <string name="fragment_locations_global_room">No room</string>
+
+    <!-- Fragment notifications -->
+    <string name="fragment_notification_device_info_message">%1$s is %2$s</string>
+
+    <!-- Fragment help -->
+    <string name="fragment_help_overview_title">Features</string>
+    <string name="fragment_help_navigation_title">Navigation</string>
+    <string name="fragment_help_synchronization_title">Synchronization</string>
+    <string name="fragment_help_faq_title">Frequently Asked Questions</string>
+
+    <!-- Fragment legal -->
+    <string name="fragment_legal_message"><![CDATA[
+        "
+            <h1>HubApp is build using open source software:</h1>
+
+            <p><strong>Apache License, Version 2.0</strong><p>
+
+            <ul>
+                <li>MaterialDrawer (<a href="https://github.com/mikepenz/MaterialDrawer">Github</a>)</li>
+                <li>QRCodeReaderView (<a href="https://github.com/dlazaro66/QRCodeReaderView">Github</a>)</li>
+                <li>Picasso (<a href="https://github.com/square/picasso">Github</a>)</li>
+                <li>Apache Commons Net</li>
+                <li>Apache Commons Lang</li>
+                <li>Android-Iconics (<a href="https://github.com/mikepenz/Android-Iconics">Github</a>)</li>
+                <li>Iconify (<a href="https://github.com/JoanZapata/android-iconify">Github</a>)</li>
+                <li>Chroma (<a href="https://github.com/ItsPriyesh/chroma">Github</a>)</li>
+                <li>MPAndroidChart (<a href="https://github.com/PhilJay/MPAndroidChart">Github</a>)</li>
+                <li>Otto (<a href="https://github.com/square/otto">Github</a>)</li>
+                <li>Android PagerSlidingTabStrip (<a href="https://github.com/jpardogo/PagerSlidingTabStrip">Github</a>)</li>
+                <li>Google GSON (<a href="https://github.com/google/gson">Github</a>)</li>
+                <li>Android Support Library</li>
+                <li>Android Vision API</li>
+                <li>Android Location API</li>
+                <li>Android Maps API</li>
+            </ul>
+
+            <p><strong>Eclipse Public License v1.0</strong><p>
+
+            <ul>
+                <li>Z-Way library for Java (<a href="https://github.com/pathec/ZWay-library-for-Java">Github</a>)</li>
+            </ul>
+
+            <p><strong>MIT</strong><p>
+
+            <ul>
+                <li>Fancybuttons (<a href="https://github.com/medyo/Fancybuttons">Github</a>)</li>
+                <li>TextDrawable (<a href="https://github.com/amulyakhare/TextDrawable">Github</a>)</li>
+                <li>Material Dialogs (<a href="https://github.com/afollestad/material-dialogs">Github</a>)</li>
+                <li>SLF4J Simple Binding</li>
+                <li>Java WebSocket (<a href="https://github.com/TooTallNate/Java-WebSocket">Github</a>)</li>
+            </ul>
+
+            <hr>
+
+            <h3>MaterialDrawer</h3>
+
+            <p>Copyright 2016 Mike Penz</p>
+
+            <p>Licensed under the Apache License, Version 2.0 (the "License");
+            you may not use this file except in compliance with the License.
+            You may obtain a copy of the License at</p>
+
+               <p>http://www.apache.org/licenses/LICENSE-2.0</p>
+
+            <p>Unless required by applicable law or agreed to in writing, software
+            distributed under the License is distributed on an "AS IS" BASIS,
+            WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+            See the License for the specific language governing permissions and
+            limitations under the License.</p>
+
+            <hr>
+
+            <h3>QRCodeReaderView</h3>
+
+            <p>Copyright 2017 David Lázaro</p>
+
+            <p>Licensed under the Apache License, Version 2.0 (the "License");
+            you may not use this file except in compliance with the License.
+            You may obtain a copy of the License at</p>
+
+               <p>http://www.apache.org/licenses/LICENSE-2.0</p>
+
+            <p>Unless required by applicable law or agreed to in writing, software
+            distributed under the License is distributed on an "AS IS" BASIS,
+            WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+            See the License for the specific language governing permissions and
+            limitations under the License.</p>
+
+            <hr>
+
+            <h3>Picasso</h3>
+
+            <p>Copyright 2013 Square, Inc.</p>
+
+            <p>Licensed under the Apache License, Version 2.0 (the "License");
+            you may not use this file except in compliance with the License.
+            You may obtain a copy of the License at</p>
+
+               <p>http://www.apache.org/licenses/LICENSE-2.0</p>
+
+            <p>Unless required by applicable law or agreed to in writing, software
+            distributed under the License is distributed on an "AS IS" BASIS,
+            WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+            See the License for the specific language governing permissions and
+            limitations under the License.</p>
+
+            <hr>
+
+            <h3>Android-Iconics</h3>
+
+            <p>Copyright 2016 Mike Penz</p>
+
+            <p>Licensed under the Apache License, Version 2.0 (the "License");
+            you may not use this file except in compliance with the License.
+            You may obtain a copy of the License at</p>
+
+               <p>http://www.apache.org/licenses/LICENSE-2.0</p>
+
+            <p>Unless required by applicable law or agreed to in writing, software
+            distributed under the License is distributed on an "AS IS" BASIS,
+            WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+            See the License for the specific language governing permissions and
+            limitations under the License.</p>
+
+            <hr>
+
+            <h3>Iconify</h3>
+
+            <p>Copyright 2015 Joan Zapata</p>
+
+            <p>Licensed under the Apache License, Version 2.0 (the "License");
+            you may not use this file except in compliance with the License.
+            You may obtain a copy of the License at</p>
+
+               <p>http://www.apache.org/licenses/LICENSE-2.0</p>
+
+            <p>Unless required by applicable law or agreed to in writing, software
+            distributed under the License is distributed on an "AS IS" BASIS,
+            WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+            See the License for the specific language governing permissions and
+            limitations under the License.</p>
+
+            <p>It uses FontAwesome font by Dave Gandy, licensed under OFL 1.1, which is compatible
+            with this library's license.</p>
+
+            <p><a href="http://scripts.sil.org/cms/scripts/render_download.php?format=file&media_id=OFL_plaintext&filename=OFL.txt">SIL OPEN FONT LICENSE Version 1.1</a></p>
+
+            <hr>
+
+            <h3>Chroma</h3>
+
+            <p>Copyright 2016 Priyesh Patel</p>
+
+            <p>Licensed under the Apache License, Version 2.0 (the "License");
+            you may not use this file except in compliance with the License.
+            You may obtain a copy of the License at</p>
+
+               <p>http://www.apache.org/licenses/LICENSE-2.0</p>
+
+            <p>Unless required by applicable law or agreed to in writing, software
+            distributed under the License is distributed on an "AS IS" BASIS,
+            WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+            See the License for the specific language governing permissions and
+            limitations under the License.</p>
+
+            <hr>
+
+            <h3>MPAndroidChart</h3>
+
+            <p>Copyright 2016 Philipp Jahoda</p>
+
+            <p>Licensed under the Apache License, Version 2.0 (the "License");
+            you may not use this file except in compliance with the License.
+            You may obtain a copy of the License at</p>
+
+               <p>http://www.apache.org/licenses/LICENSE-2.0</p>
+
+            <p>Unless required by applicable law or agreed to in writing, software
+            distributed under the License is distributed on an "AS IS" BASIS,
+            WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+            See the License for the specific language governing permissions and
+            limitations under the License.</p>
+
+            <hr>
+
+            <h3>Otto</h3>
+
+            <p>Copyright 2012 Square, Inc.</p>
+            <p>Copyright 2010 Google, Inc.</p>
+
+            <p>Licensed under the Apache License, Version 2.0 (the "License");
+            you may not use this file except in compliance with the License.
+            You may obtain a copy of the License at</p>
+
+               <p>http://www.apache.org/licenses/LICENSE-2.0</p>
+
+            <p>Unless required by applicable law or agreed to in writing, software
+            distributed under the License is distributed on an "AS IS" BASIS,
+            WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+            See the License for the specific language governing permissions and
+            limitations under the License.</p>
+
+            <hr>
+
+            <h3>Android PagerSlidingTabStrip</h3>
+
+            <p>Copyright 2013 Andreas Stuetz</p>
+
+            <p>Licensed under the Apache License, Version 2.0 (the "License");
+            you may not use this file except in compliance with the License.
+            You may obtain a copy of the License at</p>
+
+               <p>http://www.apache.org/licenses/LICENSE-2.0</p>
+
+            <p>Unless required by applicable law or agreed to in writing, software
+            distributed under the License is distributed on an "AS IS" BASIS,
+            WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+            See the License for the specific language governing permissions and
+            limitations under the License.</p>
+
+            <hr>
+
+            <h3>Google GSON</h3>
+
+            <p>Copyright 2008 Google Inc.</p>
+
+            <p>Licensed under the Apache License, Version 2.0 (the "License");
+            you may not use this file except in compliance with the License.
+            You may obtain a copy of the License at</p>
+
+               <p>http://www.apache.org/licenses/LICENSE-2.0</p>
+
+            <p>Unless required by applicable law or agreed to in writing, software
+            distributed under the License is distributed on an "AS IS" BASIS,
+            WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+            See the License for the specific language governing permissions and
+            limitations under the License.</p>
+
+            <hr>
+
+            <h3>Z-Way library for Java</h3>
+
+            <p>Copyright &copy; 2016 by <a href="http://www.software-systementwicklung.de/">Software-Systementwicklung Zwickau</a> Research Group</p>
+
+            <p>All rights reserved. This program and the accompanying materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html</p>
+
+            <hr>
+
+            <h3>Fancybuttons</h3>
+
+             <p>The MIT License (MIT)</p>
+
+            <p>Copyright &copy; El Mehdi Sakout</p>
+
+            <p>Permission is hereby granted, free of charge, to any person obtaining a copy
+            of this software and associated documentation files (the "Software"), to deal
+            in the Software without restriction, including without limitation the rights
+            to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+            copies of the Software, and to permit persons to whom the Software is
+            furnished to do so, subject to the following conditions:</p>
+
+            <p>The above copyright notice and this permission notice shall be included in all
+            copies or substantial portions of the Software.</p>
+
+            <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+            IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+            FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+            AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+            LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+            OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+            SOFTWARE.</p>
+
+            <hr>
+
+            <h3>TextDrawable</h3>
+
+            <p>The MIT License (MIT)</p>
+
+            <p>Copyright &copy; 2014 Amulya Khare</p>
+
+            <p>Permission is hereby granted, free of charge, to any person obtaining a copy
+            of this software and associated documentation files (the "Software"), to deal
+            in the Software without restriction, including without limitation the rights
+            to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+            copies of the Software, and to permit persons to whom the Software is
+            furnished to do so, subject to the following conditions:</p>
+
+            <p>The above copyright notice and this permission notice shall be included in all
+            copies or substantial portions of the Software.</p>
+
+            <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+            IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+            FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+            AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+            LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+            OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+            SOFTWARE.</p>
+
+            <hr>
+
+            <h3>Material Dialogs</h3>
+
+            <p>The MIT License (MIT)</p>
+
+            <p>Copyright &copy; 2014-2016 Aidan Michael Follestad</p>
+
+            <p>Permission is hereby granted, free of charge, to any person obtaining a copy
+            of this software and associated documentation files (the "Software"), to deal
+            in the Software without restriction, including without limitation the rights
+            to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+            copies of the Software, and to permit persons to whom the Software is
+            furnished to do so, subject to the following conditions:</p>
+
+            <p>The above copyright notice and this permission notice shall be included in all
+            copies or substantial portions of the Software.</p>
+
+            <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+            IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+            FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+            AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+            LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+            OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+            SOFTWARE.</p>
+
+            <hr>
+
+            <h3>Java WebSocket</h3>
+
+            <p>The MIT License (MIT)</p>
+
+            <p>Copyright &copy; 2010-2012 Nathan Rajlich</p>
+
+             <p>Permission is hereby granted, free of charge, to any person
+             obtaining a copy of this software and associated documentation
+             files (the "Software"), to deal in the Software without
+             restriction, including without limitation the rights to use,
+             copy, modify, merge, publish, distribute, sublicense, and/or sell
+             copies of the Software, and to permit persons to whom the
+             Software is furnished to do so, subject to the following
+             conditions:</p>
+
+             <p>The above copyright notice and this permission notice shall be
+             included in all copies or substantial portions of the Software.</p>
+
+             <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+             EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+             OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+             NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+             HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+             WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+             FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+            OTHER DEALINGS IN THE SOFTWARE.</p>
+        "
+    ]]></string>
+
+    <!-- Fragment elements -->
+    <string name="device_level_action_full">Full</string>
+    <string name="device_text_more">More</string>
+
+    <string name="device_level_on">On</string>
+    <string name="device_level_off">Off</string>
+
+    <string name="device_level_open">Open</string>
+    <string name="device_level_close">Close</string>
+
+    <string name="device_level_unknown">Unknown</string>
+
+    <string name="device_no_action">No actions defined for the device type (%1$s).</string>
+
+    <string name="device_history_not_enough_data">Not enough data available. Please check the settings of the Z-Way App - 24 Hours Device History.</string>
+
+    <string name="work_in_progress">Work in progress!</string>
+
+    <string name="device_sensor_discrete_button">Button</string>
+    <string name="device_sensor_discrete_press">pressed</string>
+    <string name="device_sensor_discrete_hold">hold</string>
+    <string name="device_sensor_discrete_release">released</string>
+
+    <string name="device_sensor_multiline_unknown">Unknown multiline type! Please contact the support.</string>
+    <string name="device_open_weather_pressure">Pressure</string>
+    <string name="device_open_weather_humidity">Humidity</string>
+    <string name="device_open_weather_weather">Weather</string>
+    <string name="device_open_weather_wind">Wind</string>
+    <string name="device_open_weather_last_update">Last update</string>
+
+    <string name="open_weather_condition_200">Thunderstorm with light rain</string>
+    <string name="open_weather_condition_201">Thunderstorm with rain</string>
+    <string name="open_weather_condition_202">Thunderstorm with heavy rain</string>
+    <string name="open_weather_condition_210">Light thunderstorm</string>
+    <string name="open_weather_condition_211">Thunderstorm</string>
+    <string name="open_weather_condition_212">Heavy thunderstorm</string>
+    <string name="open_weather_condition_221">Ragged thunderstorm</string>
+    <string name="open_weather_condition_230">Thunderstorm with light drizzle</string>
+    <string name="open_weather_condition_231">Thunderstorm with drizzle</string>
+    <string name="open_weather_condition_232">Thunderstorm with heavy drizzle</string>
+
+    <string name="open_weather_condition_300">Light intensity drizzle rain</string>
+    <string name="open_weather_condition_301">Drizzle </string>
+    <string name="open_weather_condition_302">Heavy intensity drizzle </string>
+    <string name="open_weather_condition_310">Light intensity drizzle rain </string>
+    <string name="open_weather_condition_311">Drizzle rain</string>
+    <string name="open_weather_condition_312">Heavy intensity drizzle rain </string>
+    <string name="open_weather_condition_313">Shower rain and drizzle </string>
+    <string name="open_weather_condition_314">Heavy shower rain and drizzle</string>
+    <string name="open_weather_condition_321">Shower drizzle</string>
+
+    <string name="open_weather_condition_500">Light rain</string>
+    <string name="open_weather_condition_501">Moderate rain</string>
+    <string name="open_weather_condition_502">Heavy intensity rain</string>
+    <string name="open_weather_condition_503">Very heavy rain</string>
+    <string name="open_weather_condition_504">Extreme rain</string>
+    <string name="open_weather_condition_511">Freezing rain</string>
+    <string name="open_weather_condition_520">Light intensity shower rain</string>
+    <string name="open_weather_condition_521">Shower rain</string>
+    <string name="open_weather_condition_522">Heavy intensity shower rain</string>
+    <string name="open_weather_condition_531">Ragged shower rain </string>
+
+    <string name="open_weather_condition_600">Light snow</string>
+    <string name="open_weather_condition_601">Snow</string>
+    <string name="open_weather_condition_602">Heavy snow</string>
+    <string name="open_weather_condition_611">Sleet</string>
+    <string name="open_weather_condition_612">Shower sleet</string>
+    <string name="open_weather_condition_615">Light rain and snow</string>
+    <string name="open_weather_condition_616">Rain and snow</string>
+    <string name="open_weather_condition_620">Light shower snow</string>
+    <string name="open_weather_condition_621">Shower snow</string>
+    <string name="open_weather_condition_622">Heavy shower snow</string>
+
+    <string name="open_weather_condition_701">Mist</string>
+    <string name="open_weather_condition_711">Smoke</string>
+    <string name="open_weather_condition_721">Haze</string>
+    <string name="open_weather_condition_731">Sand, dust whirls</string>
+    <string name="open_weather_condition_741">Fog</string>
+    <string name="open_weather_condition_751">Sand</string>
+    <string name="open_weather_condition_761">Dust</string>
+    <string name="open_weather_condition_762">Volcanic ash</string>
+    <string name="open_weather_condition_771">Squalls</string>
+    <string name="open_weather_condition_781">Tornado</string>
+
+    <string name="open_weather_condition_800">Clear sky</string>
+    <string name="open_weather_condition_801">Few clouds</string>
+    <string name="open_weather_condition_802">Broken clouds</string>
+    <string name="open_weather_condition_803">Broken clouds</string>
+    <string name="open_weather_condition_804">Overcast clouds</string>
+
+    <string name="open_weather_condition_900">Tornado</string>
+    <string name="open_weather_condition_901">Tropical storm</string>
+    <string name="open_weather_condition_902">Hurricane</string>
+    <string name="open_weather_condition_903">Cold</string>
+    <string name="open_weather_condition_904">Hot</string>
+    <string name="open_weather_condition_905">Windy</string>
+    <string name="open_weather_condition_906">Hail</string>
+
+    <string name="open_weather_condition_951">Calm</string>
+    <string name="open_weather_condition_952">Light breeze</string>
+    <string name="open_weather_condition_953">Gentle breeze</string>
+    <string name="open_weather_condition_954">Moderate breeze</string>
+    <string name="open_weather_condition_955">Fresh breeze</string>
+    <string name="open_weather_condition_956">Strong breeze</string>
+    <string name="open_weather_condition_957">High wind, near gale</string>
+    <string name="open_weather_condition_958">Gale</string>
+    <string name="open_weather_condition_959">Severe gale</string>
+    <string name="open_weather_condition_960">Storm</string>
+    <string name="open_weather_condition_961">Violent storm</string>
+    <string name="open_weather_condition_962">Hurricane</string>
+
+    <!-- Android notifications -->
+    <string name="notification_alarm_with_room">Alarm: %1$s fired in %2$s!</string>
+    <string name="notification_alarm">Alarm: %1$s fired!</string>
+
+    <string name="alarm_message">Alarm: %1$s</string>
+</resources>

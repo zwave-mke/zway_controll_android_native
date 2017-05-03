@@ -1,0 +1,20 @@
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/DeviceCardBottom" >
+
+    <com.mikepenz.iconics.view.IconicsImageView
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="3dp"
+        app:iiv_color="@color/secondary_text"
+        app:iiv_icon="gmd-timer" />
+
+    <TextView
+        android:id="@+id/device_item_update_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="@color/secondary_text" />
+
+</LinearLayout>

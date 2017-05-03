@@ -1,0 +1,61 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="52dp" >
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:padding="4dp">
+
+        <ImageView android:id="@+id/device_item_location_tile"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@mipmap/ic_tile_placeholder" />
+    </LinearLayout>
+
+    <ImageView android:id="@+id/device_item_icon"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:src="@mipmap/ic_placeholder"
+        android:gravity="center"
+        android:layout_weight="2"
+        android:layout_marginTop="4dp" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="end"
+        android:padding="4dp" >
+
+        <ProgressBar
+            android:id="@+id/device_item_progress"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/secondary_text"
+            android:indeterminateTintMode="multiply"
+            android:visibility="gone" />
+
+        <com.mikepenz.iconics.view.IconicsImageView
+            android:id="@+id/device_item_progress_success"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            app:iiv_color="@color/material_color_green"
+            app:iiv_icon="cmd-check"
+            android:visibility="gone" />
+
+        <com.mikepenz.iconics.view.IconicsImageView
+            android:id="@+id/device_item_progress_error"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            app:iiv_color="@color/material_color_red"
+            app:iiv_icon="cmd-alert-circle-outline"
+            android:visibility="gone" />
+
+    </LinearLayout>
+</LinearLayout>

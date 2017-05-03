@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        android:gravity="center" >
+
+        <TextView
+            android:id="@+id/dialog_switch_multilevel_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="2dp"
+            android:textStyle="bold"
+            android:textColor="@color/primary_text"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/dialog_switch_multilevel_scale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:textColor="@color/primary_text"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dialog_switch_multilevel_level_slider"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/dialog_switch_multilevel_level_down"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:layout_weight="1"
+            android:textColor="@color/icons"
+            android:theme="@style/SensorButton" />
+
+        <Button
+            android:id="@+id/dialog_switch_multilevel_level_up"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:layout_weight="1"
+            android:textColor="@color/icons"
+            android:theme="@style/SensorButton" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/dialog_switch_multilevel_level_down_5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="-5"
+            android:layout_weight="1"
+            android:textColor="@color/icons"
+            android:theme="@style/SensorButton" />
+
+        <Button
+            android:id="@+id/dialog_switch_multilevel_level_up_5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="+5"
+            android:layout_weight="1"
+            android:textColor="@color/icons"
+            android:theme="@style/SensorButton" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/dialog_switch_multilevel_level_full"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/device_level_action_full"
+        android:textColor="@color/icons"
+        android:theme="@style/SensorButton" />
+</LinearLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/filter_device_type"
+        android:title="@string/constrain_device_type"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom" />
+
+    <item android:id="@+id/filter_tags"
+        android:title="@string/constrain_tags"
+        android:orderInCategory="100"
+        app:showAsAction="always" />
+
+    <item android:id="@+id/filter_sorting"
+        android:title="@string/constrain_sorting"
+        android:orderInCategory="100"
+        app:showAsAction="always" />
+</menu>

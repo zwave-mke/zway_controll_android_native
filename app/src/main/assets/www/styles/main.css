@@ -1,0 +1,32 @@
+body {
+    padding: 10px;
+    background-color: #00796b;
+}
+
+h1 {
+    font-size: 22px;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+h3 {
+    font-size: 16px;
+}
+
+h4 {
+    font-size: 14px;
+}
+
+.white {
+    color: #ffffff;
+}
+
+.black {
+    color: #000000;
+}
+
+.screenshot {
+    max-width: 80%;
+}

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "123089634146",
+    "firebase_url": "https://hubapp-77c13.firebaseio.com",
+    "project_id": "hubapp-77c13",
+    "storage_bucket": "hubapp-77c13.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:123089634146:android:52a42b03b612b456",
+        "android_client_info": {
+          "package_name": "de.pathec.hubapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "123089634146-8rfhlnnk8rg3o4nbu32jra223mb9lo9h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAL9TmMJl-IH2iCO0LdwgrtpQ8ZClKAyg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
