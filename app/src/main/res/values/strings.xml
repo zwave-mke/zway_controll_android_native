@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Hub App</string>
+    <string name="app_name">ZWay</string>
 
     <string name="zway_firmware_update_required">Please update your Z-Way. version 2.3.0 is required!</string>
 
@@ -230,7 +230,7 @@
     <string name="fragment_settings_general_protocol_btn">Show protocol</string>
 
     <string name="fragment_settings_general_about">About</string>
-    <string name="fragment_settings_general_open_source_message">Hub App Version 1.0 (30.04.2017)\r\n\r\nCopyright &#169; 2017 Z-Wave.Me\r\n\r\nDeveloped by Patrick Hecker\r\n\r\nHubApp is build using open source software:</string>
+    <string name="fragment_settings_general_open_source_message">ZWay App Version 1.0 (30.04.2017)\r\n\r\nCopyright &#169; 2017 Z-Wave.Me\r\n\r\nDeveloped by Z-Wave.Me\r\n\r\ZWay App is build using open source software:</string>
     <string name="fragment_settings_general_open_source_btn">Open source software</string>
 
     <string-array name="start_views">

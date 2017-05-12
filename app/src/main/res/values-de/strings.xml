@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Hub App</string>
+    <string name="app_name">ZWay</string>
     <string name="action_clear">Leeren</string>
     <string name="action_delete">Löschen</string>
     <string name="action_save">Speichern</string>
@@ -201,7 +201,7 @@
     <string name="fragment_legal">Rechtliches</string>
     <string name="fragment_settings_general_about">Über</string>
     <string name="fragment_settings_general_open_source_btn">Open Source Software</string>
-    <string name="fragment_settings_general_open_source_message">Hub App Version 1.0 (30.04.2017)\r\n\r\nCopyright &#169; 2017 Z-Wave.Me\r\n\r\nEntwickelt von Patrick Hecker\r\n\r\nDie HubApp benutzt Open Source Software:</string>
+    <string name="fragment_settings_general_open_source_message">ZWay App Version 1.0 (30.04.2017)\r\n\r\nCopyright &#169; 2017 Z-Wave.Me\r\n\r\nEntwickelt von Z-Wave.Me\r\n\r\nDie Zway App benutzt Open Source Software:</string>
     <string name="fragment_help_overview_title">Funktionen</string>
     <string name="fragment_help_title">Hilfe</string>
     <string name="fragment_help_navigation_title">Navigation</string>
