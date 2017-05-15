@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "123089634146",
-    "firebase_url": "https://hubapp-77c13.firebaseio.com",
-    "project_id": "hubapp-77c13",
-    "storage_bucket": "hubapp-77c13.appspot.com"
+    "project_number": "1041356184725",
+    "firebase_url": "https://z-way-control-3fd60.firebaseio.com",
+    "project_id": "z-way-control-3fd60",
+    "storage_bucket": "z-way-control-3fd60.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:123089634146:android:52a42b03b612b456",
+        "mobilesdk_app_id": "1:1041356184725:android:52a42b03b612b456",
         "android_client_info": {
           "package_name": "de.pathec.hubapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "123089634146-8rfhlnnk8rg3o4nbu32jra223mb9lo9h.apps.googleusercontent.com",
+          "client_id": "1041356184725-5du1f0acbvjiep8qf2q6cgab7vfngu9o.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBAL9TmMJl-IH2iCO0LdwgrtpQ8ZClKAyg"
+          "current_key": "AIzaSyDeHcYU7XUeFS7lQBOBAcb2svQHPjkECP4"
         }
       ],
       "services": {
