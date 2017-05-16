@@ -984,7 +984,7 @@ public class Intro extends AppCompatActivity implements
                         commandParams.put("title", Build.MODEL);
                         commandParams.put("os", "android");
 
-                        DeviceCommand deviceCommand = new DeviceCommand("HubApp", "registerApp", commandParams);
+                        DeviceCommand deviceCommand = new DeviceCommand("MobileAppSupport", "registerApp", commandParams);
                         String message = mZWayApi.getDeviceCommand(deviceCommand);
                         if (message != null) {
                             Log.i(Params.LOGGING_TAG, "Sending the register command to the app resulted in: " + message);

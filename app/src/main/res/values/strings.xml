@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ZWay</string>
+    <string name="app_name">Z-Way</string>
 
     <string name="zway_firmware_update_required">Please update your Z-Way. version 2.3.0 is required!</string>
 
@@ -137,8 +137,8 @@
     <string name="intro_connecting_message_profile_data_loaded">All profile data successfully loaded.</string>
     <string name="intro_connecting_message_profile_data_failed">Loading of profile data failed! Please check the correctness of your data.</string>
 
-    <string name="intro_connecting_message_app_registration_successfully">Setting up the Z-Way App needed for the notifications.</string>
-    <string name="intro_connecting_message_app_registration_failed">Setting up the Z-Way App failed!</string>
+    <string name="intro_connecting_message_app_registration_successfully">Setting up the Mobile App Support in Z-Way needed for the notifications.</string>
+    <string name="intro_connecting_message_app_registration_failed">Setting up the Mobile App Support in Z-Way failed!</string>
 
     <string name="intro_connecting_message_initialize_hub_successfully">All actions have been successfully completed. The App is now ready for use.</string>
 
@@ -157,7 +157,7 @@
     <string name="intro_access_failed_with_all">Connection to Hub has failed with all variants.</string>
     <string name="intro_access_successful_at_least_with_one">Connection to Hub successfully established at least with one variant.</string>
 
-    <string name="intro_setting_up_z_way_app">Setting up the Z-Way App needed for the notifications.</string>
+    <string name="intro_setting_up_z_way_app">Setting up the Mobile App Support in Z-Way needed for the notifications.</string>
     <string name="intro_setting_up_z_way_app_internal_error">Sending the register command to the App resulted in an internal Z-Way error.</string>
     <string name="intro_setting_up_z_way_firebase_unavailable">Firebase Cloud Messaging unavailable!</string>
     <string name="intro_setting_up_z_way_unexpected_error">Unexpected error occurred during register App in Z-Way: %1$s.</string>
@@ -192,7 +192,7 @@
     <string name="warning_no_hub">No Hub configured!</string>
 
     <string name="google_play_service_required">Google Play Services API required!</string>
-    <string name="z_way_module_required">Please install and add Hub App in Z-Way.</string>
+    <string name="z_way_module_required">Please install and add Mobile App Support in Z-Way.</string>
 
     <string name="validation_blank">%1$s is required!</string>
     <string name="validation_min">%1$s is required (at least %2$s characters)!</string>
@@ -230,7 +230,7 @@
     <string name="fragment_settings_general_protocol_btn">Show protocol</string>
 
     <string name="fragment_settings_general_about">About</string>
-    <string name="fragment_settings_general_open_source_message">ZWay App Version 1.0 (30.04.2017)\r\n\r\nCopyright &#169; 2017 Z-Wave.Me\r\n\r\nDeveloped by Z-Wave.Me\r\n\r\ZWay App is build using open source software:</string>
+    <string name="fragment_settings_general_open_source_message">Z-Way App Version 1.3 (16.05.2017)\r\n\r\nCopyright &#169; 2017 Z-Wave.Me\r\n\r\nZ-Way App is build using open source software:</string>
     <string name="fragment_settings_general_open_source_btn">Open source software</string>
 
     <string-array name="start_views">
@@ -279,7 +279,7 @@
     <!-- Fragment legal -->
     <string name="fragment_legal_message"><![CDATA[
         "
-            <h1>HubApp is build using open source software:</h1>
+            <h1>Z-Way App is build using open source software:</h1>
 
             <p><strong>Apache License, Version 2.0</strong><p>
 

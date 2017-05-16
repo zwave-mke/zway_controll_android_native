@@ -845,7 +845,7 @@ public class MainActivity extends AppCompatActivity
                 Map<String, String> commandParams = new HashMap<>();
                 commandParams.put("token", token);
                 commandParams.put("active", active);
-                DeviceCommand deviceCommand = new DeviceCommand("HubApp", "updateActiveState", commandParams);
+                DeviceCommand deviceCommand = new DeviceCommand("MobileAppSupport", "updateActiveState", commandParams);
 
                 if (hubConnectionHolder.getZWayApi() != null) {
                     String message = hubConnectionHolder.getDeviceCommand(deviceCommand);
@@ -863,7 +863,7 @@ public class MainActivity extends AppCompatActivity
                                 registerCommandParams.put("title", Build.MODEL);
                                 registerCommandParams.put("os", "android");
 
-                                DeviceCommand registerDeviceCommand = new DeviceCommand("HubApp", "registerApp", registerCommandParams);
+                                DeviceCommand registerDeviceCommand = new DeviceCommand("MobileAppSupport", "registerApp", registerCommandParams);
                                 String registerMessage = hubConnectionHolder.getDeviceCommand(registerDeviceCommand);
 
                                 if (registerMessage != null) {
