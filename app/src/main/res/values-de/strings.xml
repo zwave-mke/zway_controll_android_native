@@ -648,4 +648,14 @@
     <string name="devices_filter_notification_source">Filter nach Quelle</string>
     <string name="devices_filter_notification_source_reset">Alle Elemente</string>
     <string name="zway_firmware_update_required">Bitte aktualisiere dein Z-Way. Version 2.3.0 ist mindestens erforderlich!</string>
+    <string name="fragment_settings_general_changelog_title">Änderungsverlauf</string>
+    <string name="fragment_settings_general_changelog">
+        <![CDATA[
+            "
+                <p><i>Version 1.4</i></p>
+                <p>Anzeigen der Gerätehistorie beim Antippen eines Multilevel Widgets. Wenn keine Daten vorhanden sind, wird die Ereignisansicht geöffnet.</p>
+                <p>Anzeigen der Ereignisansicht beim Antippen eines binären oder diskreten Sensor-Widgets.</p>
+            "
+        ]]>
+    </string>
 </resources>

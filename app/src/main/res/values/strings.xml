@@ -242,6 +242,17 @@
     <string name="fragment_settings_general_view_options_title">View settings</string>
     <string name="fragment_settings_general_view_options_battery_info">Show battery info</string>
 
+    <string name="fragment_settings_general_changelog_title">Changelog</string>
+    <string name="fragment_settings_general_changelog">
+        <![CDATA[
+            "
+                <p><i>Version 1.4</i></p>
+                <p>Display the history when tap on a multilevel sensor widget. If no data available, the notification view is displayed.</p>
+                <p>Display the notification view when tap on a binary and discrete sensor widget.</p>
+            "
+        ]]>
+    </string>
+
     <!-- Fragment settings geofencing -->
     <string name="fragment_settings_geofencing_phone_settings">Phone settings</string>
     <string name="fragment_settings_geofencing_phone_settings_desc">Phone settings affect all homes.</string>

@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -36,6 +37,8 @@ public class SettingsGeneralFragment extends Fragment {
 
     private TextView mDebuggingNotificationsCounterTxt;
     private CheckBox mDebuggingNotificationsCbx;
+
+    private TextView mChangelogTxt;
 
     public SettingsGeneralFragment() {
         // Required empty public constructor
@@ -96,6 +99,9 @@ public class SettingsGeneralFragment extends Fragment {
                 mListener.onSettingsGeneralProtocol("", "");
             }
         });
+
+        // Changelog
+        mChangelogTxt = (TextView) getView().findViewById(R.id.fragment_settings_general_changelog);
     }
 
     private void loadData() {
@@ -121,6 +127,13 @@ public class SettingsGeneralFragment extends Fragment {
         // Debugging
         mDebuggingNotificationsCounterTxt.setText(String.format("Notification counter: %s", String.valueOf(settings.getLong(Params.PREFS_FCM_COUNTER, 0))));
         mDebuggingNotificationsCbx.setChecked(settings.getBoolean(Params.PREFS_DEBUGGING_NOTIFICATIONS, false));
+
+        // Changelog
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            mChangelogTxt.setText(Html.fromHtml(getString(R.string.fragment_settings_general_changelog),Html.FROM_HTML_MODE_LEGACY));
+        } else {
+            mChangelogTxt.setText(Html.fromHtml(getString(R.string.fragment_settings_general_changelog)));
+        }
     }
 
     @Override
