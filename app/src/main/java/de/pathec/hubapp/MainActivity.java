@@ -1218,6 +1218,11 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
+    public void onElementsFragmentShowNotifications(String deviceId) {
+        showFragment(NotificationsFragment.newInstance(deviceId), NOTIFICATIONS_FRAGMENT, true);
+    }
+
+    @Override
     public void onLocationsFragmentDetail(LocationItemApp locationItem) {
         showFragment(ElementsFragment.newInstance(false, locationItem.getId()), LOCATIONS_FRAGMENT, true);
     }

@@ -163,9 +163,11 @@ public class DeviceHandler implements SwitchMultilevelDialog.OnSwitchMultilevelD
                 handleSwitchMultilevelAction(deviceItem);
                 return;
             case DEVICE_TYPE_SENSOR_BINARY:
-                break;
+                handleNotificationAction(deviceItem);
+                return;
             case DEVICE_TYPE_SENSOR_MULTILEVEL:
-                break;
+                handleHistoryAction(deviceItem);
+                return;
             case DEVICE_TYPE_SWITCH_BINARY:
                 handleSwitchBinaryAction(deviceItem, false, action);
                 return;
@@ -192,7 +194,8 @@ public class DeviceHandler implements SwitchMultilevelDialog.OnSwitchMultilevelD
                 //return;
                 break;
             case DEVICE_TYPE_SENSOR_DISCRETE:
-                break;
+                handleNotificationAction(deviceItem);
+                return;
             case DEVICE_TYPE_SENSOR_MULTILINE:
                 handleMultilineAction(deviceItem);
                 return;
@@ -406,6 +409,19 @@ public class DeviceHandler implements SwitchMultilevelDialog.OnSwitchMultilevelD
     }
 
     /**
+     * Handle command for binary sensor, ...
+     *
+     * @param deviceItem device instance
+     */
+    private void handleHistoryAction(DeviceItemApp deviceItem) {
+        mListener.onDeviceHandlerHistory(deviceItem);
+    }
+
+    private void handleNotificationAction(DeviceItemApp deviceItem) {
+        mListener.onDeviceHandlerShowNotificationFragment(deviceItem.getDeviceId());
+    }
+
+    /**
      * Handle result of multilevel switch dialog.
      *
      * @param deviceItem device instance with new level
@@ -443,7 +459,9 @@ public class DeviceHandler implements SwitchMultilevelDialog.OnSwitchMultilevelD
     public interface DeviceHandlerInteractionListener {
         void onDeviceHandlerStartAction(DeviceItemApp deviceItem);
         void onDeviceHandlerFinishAction(DeviceItemApp deviceItem, String result);
+        void onDeviceHandlerHistory(DeviceItemApp deviceItem);
 
         void onDeviceHandlerShowVideoFragment(String deviceId);
+        void onDeviceHandlerShowNotificationFragment(String deviceId);
     }
 }

@@ -783,6 +783,8 @@ public class ElementsFragment extends Fragment implements
 
                     if (deviceHistoryAverageGroups.size() < 2) {
                         Util.showMessage(getActivity(), getString(R.string.device_history_not_enough_data));
+
+                        mListener.onElementsFragmentShowNotifications(deviceId);
                     } else {
                         HubConnectionHolder hubConnectionHolder = getHubConnectionHolder();
                         if (hubConnectionHolder != null) {
@@ -794,6 +796,8 @@ public class ElementsFragment extends Fragment implements
                     }
                 } else {
                     Util.showMessage(getActivity(), getString(R.string.device_history_not_enough_data));
+
+                    mListener.onElementsFragmentShowNotifications(deviceId);
                 }
             }
         }.execute();
@@ -962,6 +966,16 @@ public class ElementsFragment extends Fragment implements
     }
 
     @Override
+    public void onDeviceHandlerShowNotificationFragment(String deviceId) {
+        mListener.onElementsFragmentShowNotifications(deviceId);
+    }
+
+    @Override
+    public void onDeviceHandlerHistory(DeviceItemApp deviceItem) {
+        onDeviceHistory(deviceItem);
+    }
+
+    @Override
     public void onDeviceHistoryListLoaded(ArrayList<DeviceHistoryItemApp> deviceHistoryList, Boolean loadFromHub) {
         // Do nothing
     }
@@ -978,5 +992,6 @@ public class ElementsFragment extends Fragment implements
 
     public interface OnElementsFragmentInteractionListener {
         void onElementsFragmentShowVideoFragment(String deviceId);
+        void onElementsFragmentShowNotifications(String deviceId);
     }
 }

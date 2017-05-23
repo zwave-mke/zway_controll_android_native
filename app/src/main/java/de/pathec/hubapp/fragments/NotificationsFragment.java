@@ -76,12 +76,26 @@ public class NotificationsFragment extends Fragment implements
     private String mNotificationFilterType;
     private String mNotificationFilterSource;
 
+    private static final String DEVICE_ID = "deviceId";
+
+    private String mDeviceId;
+
     public NotificationsFragment() {
         // Required empty public constructor
     }
 
     public static NotificationsFragment newInstance() {
         return new NotificationsFragment();
+    }
+
+    public static NotificationsFragment newInstance(String deviceId) {
+        NotificationsFragment fragment = new NotificationsFragment();
+
+        Bundle args = new Bundle();
+        args.putString(DEVICE_ID, deviceId);
+        fragment.setArguments(args);
+
+        return fragment;
     }
 
     @Override
@@ -95,6 +109,16 @@ public class NotificationsFragment extends Fragment implements
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_notifications, container, false);
+
+        SharedPreferences settings = getContext().getSharedPreferences(Params.PREFS_NAME, 0);
+
+        if(getArguments() != null) {
+            mDeviceId = getArguments().getString(DEVICE_ID, "");
+        }
+
+        if (mDeviceId != null && !mDeviceId.equals("")) {
+            settings.edit().putString(Params.PREFS_NOTIFICATION_FILTER_SOURCE, mDeviceId).apply();
+        }
 
         mSwipeContainer = (SwipeRefreshLayout) view.findViewById(R.id.fragment_notifications_swipe_fresh_layout);
         mNoData = (LinearLayout) view.findViewById(R.id.fragment_notifications_no_data);
@@ -141,7 +165,6 @@ public class NotificationsFragment extends Fragment implements
         mItemTouchHelper.attachToRecyclerView(mRecyclerView);
 
         // Load preferences
-        SharedPreferences settings = getContext().getSharedPreferences(Params.PREFS_NAME, 0);
         mNotificationFilterType = settings.getString(Params.PREFS_NOTIFICATION_FILTER_TYPE, "");
         mNotificationFilterSource = settings.getString(Params.PREFS_NOTIFICATION_FILTER_SOURCE, "");
 
