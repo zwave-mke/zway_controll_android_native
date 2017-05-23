@@ -3,6 +3,9 @@ package de.pathec.hubapp.util;
 
 import android.content.Context;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import de.pathec.hubapp.R;
 import de.pathec.hubapp.model.protocol.ProtocolItem;
 import de.pathec.hubapp.model.protocol.ProtocolType;
@@ -105,6 +108,14 @@ public class ZWayUtil {
 
         Util.addProtocol(context, new ProtocolItem(context, ProtocolType.WARNING, "Unknown device type: " + deviceTypeLabel + "!", "ZWayUtil"));
         return "Unknown";
+    }
+
+    public static Set<String> getBlacklistDeviceIds() {
+        Set<String> blacklist = new HashSet<>();
+
+        blacklist.add("OpenHabConnector");
+
+        return blacklist;
     }
 
     public static String getOpenWeatherDescriptionById(Context context, Integer weatherId) {

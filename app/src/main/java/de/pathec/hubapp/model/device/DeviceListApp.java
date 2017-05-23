@@ -24,6 +24,7 @@ import de.pathec.hubapp.model.location.LocationListApp;
 import de.pathec.hubapp.model.profile.ProfileListApp;
 import de.pathec.hubapp.util.HubConnectionHolder;
 import de.pathec.hubapp.util.Params;
+import de.pathec.hubapp.util.ZWayUtil;
 
 public class DeviceListApp {
     private Context mContext;
@@ -134,6 +135,10 @@ public class DeviceListApp {
             Set<String> deviceIds = new HashSet<>();
 
             for(Device device : deviceList.getAllDevices()) {
+                if (ZWayUtil.getBlacklistDeviceIds().contains(device.getDeviceId())) {
+                    continue;
+                }
+
                 deviceIds.add(device.getDeviceId());
 
                 DeviceItemApp deviceItemApp = mDatabaseHandler.getDevice(device.getDeviceId(), hubId);
