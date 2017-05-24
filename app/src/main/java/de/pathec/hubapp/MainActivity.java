@@ -91,6 +91,7 @@ import de.pathec.hubapp.events.ConnectionStatus;
 import de.pathec.hubapp.events.ConnectionType;
 import de.pathec.hubapp.events.ModelDeleteEvent;
 import de.pathec.hubapp.events.RemoveGeofenceEvent;
+import de.pathec.hubapp.fragments.ElementsByLocationFragment;
 import de.pathec.hubapp.fragments.ElementsFragment;
 import de.pathec.hubapp.fragments.NotificationsFragment;
 import de.pathec.hubapp.fragments.LocationsFragment;
@@ -119,6 +120,7 @@ import de.pathec.hubapp.util.Util;
 
 public class MainActivity extends AppCompatActivity
         implements ElementsFragment.OnElementsFragmentInteractionListener,
+        ElementsByLocationFragment.OnElementsByLocationFragmentInteractionListener,
         LocationsFragment.OnLocationsFragmentInteractionListener,
         NotificationsFragment.OnNotificationsFragmentInteractionListener,
         SettingsFragment.OnSettingsFragmentInteractionListener,
@@ -134,6 +136,7 @@ public class MainActivity extends AppCompatActivity
         GoogleApiClient.OnConnectionFailedListener {
 
     public static String ELEMENTS_FRAGMENT = "elements_fragment";
+    public static String ELEMENTS_BY_LOCATION = "elements_by_location_fragment";
     public static String LOCATIONS_FRAGMENT = "locations_fragment";
     public static String NOTIFICATIONS_FRAGMENT = "notifications_fragment";
     public static String SETTINGS_FRAGMENT = "settings_fragment";
@@ -1224,7 +1227,8 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onLocationsFragmentDetail(LocationItemApp locationItem) {
-        showFragment(ElementsFragment.newInstance(false, locationItem.getId()), LOCATIONS_FRAGMENT, true);
+        // Default location view without tabs: showFragment(ElementsFragment.newInstance(false, locationItem.getId()), LOCATIONS_FRAGMENT, true);
+        showFragment(ElementsByLocationFragment.newInstance(locationItem.getId()), ELEMENTS_BY_LOCATION, true);
     }
 
     @Override

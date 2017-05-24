@@ -69,6 +69,10 @@ public class LocationListApp {
         }
     }
 
+    public ArrayList<LocationItemApp> getLocationList(Integer hubId) {
+        return mDatabaseHandler.getAllLocation(hubId);
+    }
+
     private class StartLoadingLocation extends AsyncTask<Integer, Void, ZWayResponse> {
         @Override
         protected void onPreExecute() {

@@ -62,6 +62,7 @@ import de.pathec.hubapp.R;
 import de.pathec.hubapp.adapter.DevicesItemView;
 import de.pathec.hubapp.adapter.DevicesRecyclerViewAdapter;
 import de.pathec.hubapp.events.ActiveHubEvent;
+import de.pathec.hubapp.events.LocationTabSlideEvent;
 import de.pathec.hubapp.events.ModelUpdateEvent;
 import de.pathec.hubapp.handler.device.DeviceHandler;
 import de.pathec.hubapp.model.device.DeviceItemApp;
@@ -173,16 +174,53 @@ public class ElementsFragment extends Fragment implements
             mSwipeContainer.setLayoutParams(marginLayoutParams);
 
             // Show location title
-            TextView locationTxt = (TextView) view.findViewById(R.id.fragment_elements_location);
-            locationTxt.setVisibility(View.VISIBLE);
+            LinearLayout locationHeader = (LinearLayout) view.findViewById(R.id.fragment_elements_location);
+            locationHeader.setVisibility(View.VISIBLE);
+
+            TextView locationTitleTxt = (TextView) view.findViewById(R.id.fragment_elements_location_title);
 
             LocationListApp locationList = new LocationListApp(getContext(), null, null);
             LocationItemApp location = locationList.getLocationItem(mLocationId, getHubConnectionHolder().getHubItem().getId());
+
             if (!location.getId().equals(-1)) {
+                IconicsImageView locationHeaderLeft = (IconicsImageView) view.findViewById(R.id.fragment_elements_location_left);
+                IconicsImageView locationHeaderRight = (IconicsImageView) view.findViewById(R.id.fragment_elements_location_right);
+
+                locationHeaderLeft.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        BusProvider.postOnMain(new LocationTabSlideEvent(-1));
+                    }
+                });
+
+                locationHeaderRight.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        BusProvider.postOnMain(new LocationTabSlideEvent(1));
+                    }
+                });
+
+                ArrayList<LocationItemApp> locations = locationList.getLocationList(getHubConnectionHolder().getHubItem().getId());
+
+                locationHeaderLeft.setVisibility(View.VISIBLE);
+                locationHeaderRight.setVisibility(View.VISIBLE);
+
+                // Check if first or last room
+                Integer index = 0;
+                for (LocationItemApp item : locations) {
+                    if (item.getId().equals(location.getId()) && index == 0) {
+                        locationHeaderLeft.setVisibility(View.INVISIBLE);
+                    } else if (item.getId().equals(location.getId()) && index == locations.size() - 1) {
+                        locationHeaderRight.setVisibility(View.INVISIBLE);
+                    }
+
+                    index++;
+                }
+
                 if (location.getId().equals(0)) {
-                    locationTxt.setText(getContext().getString(R.string.fragment_locations_global_room));
+                    locationTitleTxt.setText(getContext().getString(R.string.fragment_locations_global_room));
                 } else {
-                    locationTxt.setText(location.getTitle());
+                    locationTitleTxt.setText(location.getTitle());
                 }
             } else {
                 Util.showMessage(getActivity(), getString(R.string.unexpected_error));

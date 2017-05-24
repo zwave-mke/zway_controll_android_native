@@ -1,7 +1,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent">
 
     <ImageView
         style="@style/BackgroundImageView"
@@ -11,16 +12,48 @@
         android:layout_centerHorizontal="true"
         tools:ignore="ContentDescription" />
 
-    <TextView
-        android:id="@+id/fragment_elements_location"
+    <LinearLayout android:id="@+id/fragment_elements_location"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="54dp"
-        android:elevation="2dp"
+        android:gravity="end"
         android:background="@color/primary50"
-        android:gravity="center"
-        android:textColor="@color/icons"
-        android:textSize="20sp"
-        android:visibility="gone" />
+        android:elevation="2dp"
+        android:weightSum="8"
+        android:visibility="gone" >
+
+        <com.mikepenz.iconics.view.IconicsImageView
+            android:id="@+id/fragment_elements_location_left"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="17dp"
+            android:gravity="center"
+            android:layout_weight="2"
+            app:ico_size="36dp"
+            app:iiv_color="@color/icons"
+            app:iiv_icon="gmd-chevron-left" />
+
+        <TextView
+            android:id="@+id/fragment_elements_location_title"
+            android:layout_width="0dp"
+            android:layout_height="54dp"
+            android:layout_weight="4"
+            android:gravity="center"
+            android:textColor="@color/icons"
+            android:textSize="20sp" />
+
+        <com.mikepenz.iconics.view.IconicsImageView
+            android:id="@+id/fragment_elements_location_right"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="17dp"
+            android:gravity="center"
+            android:layout_weight="2"
+            app:ico_size="36dp"
+            app:iiv_color="@color/icons"
+            app:iiv_icon="gmd-chevron-right" />
+
+    </LinearLayout>
 
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/fragment_elements_swipe_fresh_layout"
