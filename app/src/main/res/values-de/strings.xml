@@ -655,6 +655,7 @@
                 <p><i>Version 1.4</i></p>
                 <p>Anzeigen der Gerätehistorie beim Antippen eines Multilevel Widgets. Wenn keine Daten vorhanden sind, wird die Ereignisansicht geöffnet.</p>
                 <p>Anzeigen der Ereignisansicht beim Antippen eines binären oder diskreten Sensor-Widgets.</p>
+                <p>Die Detailansicht für Räume wurde um Tabs erweitert.<//p>
             "
         ]]>
     </string>

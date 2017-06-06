@@ -114,9 +114,11 @@ public class LocationListApp {
      * @return List of profiles, empty list if background operation or null if anything goes wrong.
      */
     public ArrayList<LocationItemApp> loadAndSaveLocationList(Integer hubId, IZWayApi zwayApi, Boolean backgroundOperation) {
-        LocationList locationList;
+        LocationList locationList = null;
         if (zwayApi == null) {
-            locationList = mHubConnectionHolder.getLocations();
+            if (mHubConnectionHolder != null) {
+                locationList = mHubConnectionHolder.getLocations();
+            }
         } else {
             locationList = zwayApi.getLocations();
         }

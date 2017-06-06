@@ -110,9 +110,11 @@ public class IconListApp {
      * @return List of profiles, empty list if background operation or null if anything goes wrong.
      */
     public ArrayList<IconItemApp> loadAndSaveIconList(Integer hubId, IZWayApi zwayApi, Boolean backgroundOperation) {
-        IconList iconList;
+        IconList iconList = null;
         if (zwayApi == null) {
-            iconList = mHubConnectionHolder.getIcons();
+            if (mHubConnectionHolder != null) {
+                iconList = mHubConnectionHolder.getIcons();
+            }
         } else {
             iconList = zwayApi.getIcons();
         }

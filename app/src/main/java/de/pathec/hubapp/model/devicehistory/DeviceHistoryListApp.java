@@ -106,9 +106,11 @@ public class DeviceHistoryListApp {
      * @return List of profiles, empty list if background operation or null if anything goes wrong.
      */
     public ArrayList<DeviceHistoryItemApp> loadAndSaveDeviceHistoryList(Integer hubId, IZWayApi zwayApi, Boolean backgroundOperation) {
-        DeviceHistoryList deviceHistoryList;
+        DeviceHistoryList deviceHistoryList = null;
         if (zwayApi == null) {
-            deviceHistoryList = mHubConnectionHolder.getDeviceHistories();
+            if (mHubConnectionHolder != null) {
+                deviceHistoryList = mHubConnectionHolder.getDeviceHistories();
+            }
         } else {
             deviceHistoryList = zwayApi.getDeviceHistories();
         }

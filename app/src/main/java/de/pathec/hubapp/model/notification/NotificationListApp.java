@@ -98,9 +98,11 @@ public class NotificationListApp {
         Long since = (new Date().getTime() - (3600 * 12 * 1000)); // 12 hours
         Log.i(Params.LOGGING_TAG, "Loading notification since: " + since);
 
-        NotificationList notificationList;
+        NotificationList notificationList = null;
         if (zwayApi == null) {
-            notificationList = mHubConnectionHolder.getNotifications(since);
+            if (mHubConnectionHolder != null) {
+                notificationList = mHubConnectionHolder.getNotifications(since);
+            }
         } else {
             notificationList = zwayApi.getNotifications(since);
         }

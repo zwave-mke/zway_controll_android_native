@@ -101,9 +101,11 @@ public class ProfileListApp {
      * @return List of profiles, empty list if background operation or null if anything goes wrong.
      */
     public ArrayList<ProfileItemApp> loadAndSaveProfileList(Integer hubId, IZWayApi zwayApi, Boolean backgroundOperation) {
-        ProfileList profileList;
+        ProfileList profileList = null;
         if (zwayApi == null) {
-            profileList = mHubConnectionHolder.getProfiles();
+            if (mHubConnectionHolder != null) {
+                profileList = mHubConnectionHolder.getProfiles();
+            }
         } else {
             profileList = zwayApi.getProfiles();
         }

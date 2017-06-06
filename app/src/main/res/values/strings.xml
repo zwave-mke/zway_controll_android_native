@@ -249,6 +249,7 @@
                 <p><i>Version 1.4</i></p>
                 <p>Display the history when tap on a multilevel sensor widget. If no data available, the notification view is displayed.</p>
                 <p>Display the notification view when tap on a binary and discrete sensor widget.</p>
+                <p>Extend detail view for rooms by tabs.</p>
             "
         ]]>
     </string>

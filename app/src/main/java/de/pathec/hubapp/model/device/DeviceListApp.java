@@ -124,9 +124,11 @@ public class DeviceListApp {
      * @return List of profiles, empty list if background operation or null if anything goes wrong.
      */
     public ArrayList<DeviceItemApp> loadAndSaveDeviceList(Integer hubId, IZWayApi zwayApi, Boolean withFilter, Boolean onlyDashboard, Integer locationId, Boolean backgroundOperation) {
-        DeviceList deviceList;
+        DeviceList deviceList = null;
         if (zwayApi == null) {
-            deviceList = mHubConnectionHolder.getDevices();
+            if (mHubConnectionHolder != null) {
+                deviceList = mHubConnectionHolder.getDevices();
+            }
         } else {
             deviceList = zwayApi.getDevices();
         }
