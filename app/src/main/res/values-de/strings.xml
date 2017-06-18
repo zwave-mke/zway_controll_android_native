@@ -201,7 +201,7 @@
     <string name="fragment_legal">Rechtliches</string>
     <string name="fragment_settings_general_about">Über</string>
     <string name="fragment_settings_general_open_source_btn">Open Source Software</string>
-    <string name="fragment_settings_general_open_source_message">Z-Way App Version 1.3 (16.05.2017)\r\n\r\nCopyright &#169; 2017 Z-Wave.Me\r\n\r\nDie Z-Way App benutzt Open Source Software:</string>
+    <string name="fragment_settings_general_open_source_message">Z-Way App Version 1.4 (18.06.2017)\r\n\r\nCopyright &#169; 2017 Z-Wave.Me\r\n\r\nDie Z-Way App benutzt Open Source Software:</string>
     <string name="fragment_help_overview_title">Funktionen</string>
     <string name="fragment_help_title">Hilfe</string>
     <string name="fragment_help_navigation_title">Navigation</string>
