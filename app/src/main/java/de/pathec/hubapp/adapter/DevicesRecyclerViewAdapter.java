@@ -33,6 +33,7 @@ import java.util.List;
 import java.util.Locale;
 
 import de.fh_zwickau.informatik.sensor.model.devices.Icons;
+import de.fh_zwickau.informatik.sensor.model.devices.types.Doorlock;
 import de.pathec.hubapp.R;
 import de.pathec.hubapp.model.device.DeviceItemApp;
 import de.pathec.hubapp.model.protocol.ProtocolItem;
@@ -220,7 +221,11 @@ public class DevicesRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
                     itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_ultraviolet)));
                     break;
                 case ICON_SMOKE:
-                    itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_smoke)));
+                    if (itemBaseViewHolder.mItemView.getDeviceItem().getMetrics().getLevel().equals("on")) {
+                        itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_smoke_on)));
+                    } else if (itemBaseViewHolder.mItemView.getDeviceItem().getMetrics().getLevel().equals("off")) {
+                        itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_smoke_off)));
+                    }
                     break;
                 case ICON_ENERGY:
                     itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_energy)));
@@ -235,27 +240,29 @@ public class DevicesRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
                     itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_thermostat)));
                     break;
                 case ICON_BATTERY:
-                    try {
-                        Double doubleLevel = Double.parseDouble(itemBaseViewHolder.mItemView.getDeviceItem().getMetrics().getLevel());
+                    // try {
+                    //    Double doubleLevel = Double.parseDouble(itemBaseViewHolder.mItemView.getDeviceItem().getMetrics().getLevel());
+                    //
+                    //    if (doubleLevel.equals(0.0)) {
+                    //        itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_battery_0)));
+                    //    } else if (doubleLevel > 0.0 && doubleLevel <= 20.0) {
+                    //        itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_battery_20)));
+                    //    } else if (doubleLevel > 20.0 && doubleLevel <= 30.0) {
+                    //        itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_battery_30)));
+                    //    } else if (doubleLevel > 30.0 && doubleLevel <= 50.0) {
+                    //        itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_battery_50)));
+                    //    } else if (doubleLevel > 50.0 && doubleLevel <= 80.0) {
+                    //        itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_battery_80)));
+                    //    } else if (doubleLevel > 80.0 && doubleLevel <= 100.0) {
+                    //        itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_battery_100)));
+                    //    }
+                    // } catch (NumberFormatException nfe) {
+                    //   Log.d(Params.LOGGING_TAG, nfe.getMessage());
+                    //
+                    //    itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_battery)));
+                    //}
 
-                        if (doubleLevel.equals(0.0)) {
-                            itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_battery_0)));
-                        } else if (doubleLevel > 0.0 && doubleLevel <= 20.0) {
-                            itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_battery_20)));
-                        } else if (doubleLevel > 20.0 && doubleLevel <= 30.0) {
-                            itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_battery_30)));
-                        } else if (doubleLevel > 30.0 && doubleLevel <= 50.0) {
-                            itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_battery_50)));
-                        } else if (doubleLevel > 50.0 && doubleLevel <= 80.0) {
-                            itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_battery_80)));
-                        } else if (doubleLevel > 80.0 && doubleLevel <= 100.0) {
-                            itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_battery_100)));
-                        }
-                    } catch (NumberFormatException nfe) {
-                        Log.d(Params.LOGGING_TAG, nfe.getMessage());
-
-                        itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_battery)));
-                    }
+                    itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_battery)));
                     break;
                 case ICON_BLINDS:
                     try {
@@ -275,20 +282,32 @@ public class DevicesRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
                     }
                     break;
                 case ICON_MULTILEVEL:
-                    try {
-                        Double doubleLevel = Double.parseDouble(itemBaseViewHolder.mItemView.getDeviceItem().getMetrics().getLevel());
+                    if (itemBaseViewHolder.mItemView.getDeviceItem().getProbeType().equals(PROBE_TYPE_SWITCH_COLOR_SOFT_WHITE)) {
+                        itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_switch_warm_white)));
+                    } else if (itemBaseViewHolder.mItemView.getDeviceItem().getProbeType().equals(PROBE_TYPE_SWITCH_COLOR_COLD_WHITE)) {
+                        itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_switch_cold_white)));
+                    } else if (itemBaseViewHolder.mItemView.getDeviceItem().getProbeType().equals(PROBE_TYPE_SWITCH_COLOR_RED)) {
+                        itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_switch_red)));
+                    } else if (itemBaseViewHolder.mItemView.getDeviceItem().getProbeType().equals(PROBE_TYPE_SWITCH_COLOR_GREEN)) {
+                        itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_switch_green)));
+                    } else if (itemBaseViewHolder.mItemView.getDeviceItem().getProbeType().equals(PROBE_TYPE_SWITCH_COLOR_BLUE)) {
+                        itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_switch_blue)));
+                    } else {
+                        try {
+                            Double doubleLevel = Double.parseDouble(itemBaseViewHolder.mItemView.getDeviceItem().getMetrics().getLevel());
 
-                        if (doubleLevel < 0.00001) {
-                            itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_dimmer_off)));
-                        } else if (doubleLevel > 98.99999) {
-                            itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_dimmer_on)));
-                        } else {
+                            if (doubleLevel < 0.00001) {
+                                itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_dimmer_off)));
+                            } else if (doubleLevel > 98.99999) {
+                                itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_dimmer_on)));
+                            } else {
+                                itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_dimmer_half)));
+                            }
+                        } catch (NumberFormatException nfe) {
+                            Log.d(Params.LOGGING_TAG, nfe.getMessage());
+
                             itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_dimmer_half)));
                         }
-                    } catch (NumberFormatException nfe) {
-                        Log.d(Params.LOGGING_TAG, nfe.getMessage());
-
-                        itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_dimmer_half)));
                     }
                     break;
                 case ICON_MOTION:
@@ -300,9 +319,9 @@ public class DevicesRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
                     break;
                 case ICON_TAMPER:
                     if (itemBaseViewHolder.mItemView.getDeviceItem().getMetrics().getLevel().equals("on")) {
-                        itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_motion_on)));
+                        itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_tamper_on)));
                     } else if (itemBaseViewHolder.mItemView.getDeviceItem().getMetrics().getLevel().equals("off")) {
-                        itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_motion_off)));
+                        itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_tamper_off)));
                     }
                     break;
                 case ICON_ALARM:
@@ -310,20 +329,52 @@ public class DevicesRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
                         itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_alarm_on)));
                     } else if (itemBaseViewHolder.mItemView.getDeviceItem().getMetrics().getLevel().equals("off")) {
                         itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_alarm_off)));
+                    } else {
+                        itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_alarm)));
                     }
                     break;
                 case ICON_DOOR:
-                    if (itemBaseViewHolder.mItemView.getDeviceItem().getMetrics().getLevel().equals("open")) {
-                        itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_door_open)));
-                    } else if (itemBaseViewHolder.mItemView.getDeviceItem().getMetrics().getLevel().equals("close")) {
-                        itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_door_closed)));
+                    if (itemBaseViewHolder.mItemView.getDeviceItem().getDeviceType().equals(DEVICE_TYPE_DOORLOCK)) {
+                        if (itemBaseViewHolder.mItemView.getDeviceItem().getMetrics().getLevel().equals("open")) {
+                            itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_lock_open)));
+                        } else if (itemBaseViewHolder.mItemView.getDeviceItem().getMetrics().getLevel().equals("close")) {
+                            itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_lock_closed)));
+                        }
+                    } else {
+                        if (itemBaseViewHolder.mItemView.getDeviceItem().getMetrics().getLevel().equals("open")) {
+                            itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_door_open)));
+                        } else if (itemBaseViewHolder.mItemView.getDeviceItem().getMetrics().getLevel().equals("close")) {
+                            itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_door_closed)));
+                        }
                     }
+
                     break;
                 case ICON_SWITCH:
                     if (itemBaseViewHolder.mItemView.getDeviceItem().getMetrics().getLevel().equals("on")) {
                         itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_switch_on)));
                     } else if (itemBaseViewHolder.mItemView.getDeviceItem().getMetrics().getLevel().equals("off")) {
                         itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_switch_off)));
+                    }
+                    break;
+                case ICON_COOLING:
+                    if (itemBaseViewHolder.mItemView.getDeviceItem().getMetrics().getLevel().equals("on")) {
+                        itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_cooling_on)));
+                    } else if (itemBaseViewHolder.mItemView.getDeviceItem().getMetrics().getLevel().equals("off")) {
+                        itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_cooling_off)));
+                    }
+                    break;
+                case ICON_FLOOD:
+                    if (itemBaseViewHolder.mItemView.getDeviceItem().getMetrics().getLevel().equals("on")) {
+                        itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_flood_on)));
+                    } else if (itemBaseViewHolder.mItemView.getDeviceItem().getMetrics().getLevel().equals("off")) {
+                        itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_flood_off)));
+                    }
+                    break;
+                case ICON_CO:
+                    if (itemBaseViewHolder.mItemView.getDeviceItem().getMetrics().getLevel().equals("on")) {
+                        itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_co_alarm_on)));
+                    } else if (itemBaseViewHolder.mItemView.getDeviceItem().getMetrics().getLevel().equals("off")) {
+                        itemBaseViewHolder.mIcon.setImageDrawable(ContextCompat.getDrawable(mContext, (R.mipmap.ic_co_alarm_off)));
                     }
                     break;
                 case ICON_BAROMETER:
