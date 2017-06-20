@@ -73,6 +73,9 @@ public class ElementsByLocationFragment extends Fragment {
         if (hubConnectionHolder != null) {
             LocationListApp locationList = new LocationListApp(getContext(), null, null);
             mLocations = locationList.getLocationList(hubConnectionHolder.getHubItem().getId());
+        } else { // prevent null pointer exceptions
+            mLocations = new ArrayList<>();
+            mActivityCommunicator.showDefaultFragment(false);
         }
     }
 

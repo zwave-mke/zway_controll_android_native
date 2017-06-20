@@ -997,11 +997,16 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public HubConnectionHolder getActiveHubConnectionHolder() {
-        for (HubConnectionHolder hubConnectionHolder : mHubConnectionHolder) {
-            if (hubConnectionHolder.getHubItem().getId().equals(mActiveHubId)) {
-                return hubConnectionHolder;
+        if (mHubConnectionHolder != null) { // prevent null pointer exceptions
+            for (HubConnectionHolder hubConnectionHolder : mHubConnectionHolder) {
+                if (hubConnectionHolder.getHubItem().getId().equals(mActiveHubId)) {
+                    return hubConnectionHolder;
+                }
             }
+        } else {
+            return null;
         }
+
 
         // If no Hub connection found, check if active Hub id is wrong
         if (mHubList.getHubCount() > 0) {
