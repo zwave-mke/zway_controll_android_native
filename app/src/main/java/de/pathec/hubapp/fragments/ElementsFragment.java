@@ -789,14 +789,18 @@ public class ElementsFragment extends Fragment implements
 
                         Integer key = Integer.parseInt(Params.formatTimeHours(timeAsDate, false)); // Hour without timezone information
 
-                        Float value = Float.parseFloat(deviceHistoryData.getLevel());
-                        if (!deviceHistoryGroups.containsKey(key)) {
-                            List<Float> values = new ArrayList<>();
-                            values.add(value);
+                        try {
+                            Float value = Float.parseFloat(deviceHistoryData.getLevel());
+                            if (!deviceHistoryGroups.containsKey(key)) {
+                                List<Float> values = new ArrayList<>();
+                                values.add(value);
 
-                            deviceHistoryGroups.put(key, values);
-                        } else {
-                            deviceHistoryGroups.get(key).add(value);
+                                deviceHistoryGroups.put(key, values);
+                            } else {
+                                deviceHistoryGroups.get(key).add(value);
+                            }
+                        } catch (NumberFormatException nfe) {
+                            return;
                         }
                     }
 

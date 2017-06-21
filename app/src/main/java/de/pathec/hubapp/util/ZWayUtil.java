@@ -114,6 +114,7 @@ public class ZWayUtil {
         Set<String> blacklist = new HashSet<>();
 
         blacklist.add("OpenHabConnector");
+        blacklist.add("MobileAppSupport");
 
         return blacklist;
     }
