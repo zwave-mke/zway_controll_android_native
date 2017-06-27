@@ -1,9 +1,17 @@
 package de.pathec.hubapp.model.device;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
@@ -24,6 +32,7 @@ import de.pathec.hubapp.model.location.LocationListApp;
 import de.pathec.hubapp.model.profile.ProfileListApp;
 import de.pathec.hubapp.util.HubConnectionHolder;
 import de.pathec.hubapp.util.Params;
+import de.pathec.hubapp.util.Util;
 import de.pathec.hubapp.util.ZWayUtil;
 
 public class DeviceListApp {
@@ -200,11 +209,19 @@ public class DeviceListApp {
 
                     mDatabaseHandler.updateDevice(deviceItemApp);
 
+                    if (deviceItemApp.getIcon().equals("")) {
+                        // Download custom icon
+                        loadCustomIcon(deviceItemApp, zwayApi);
+                    }
+
                     BusProvider.postOnMain(new ModelUpdateEvent<>("Device", deviceItemApp));
                 } else {
                     DeviceItemApp newDeviceItemApp = new DeviceItemApp(mContext, device, hubId);
 
                     mDatabaseHandler.addDevice(newDeviceItemApp);
+
+                    // Download custom icon
+                    loadCustomIcon(newDeviceItemApp, zwayApi);
 
                     // BusProvider.postOnMain(new ModelAddEvent<>("Device", newDeviceItemApp));
                 }
@@ -276,6 +293,106 @@ public class DeviceListApp {
 
     public Set<String> getAllDeviceSources(Integer hubId) {
         return mDatabaseHandler.getAllDeviceSources(hubId);
+    }
+
+    private void loadCustomIcon(DeviceItemApp deviceItem, IZWayApi zwayApi) {
+        // Download custom icon
+        if (deviceItem.getMetrics().getIcon().startsWith("/")) {
+            String iconPath;
+            if (zwayApi == null) {
+                iconPath = loadIcon(deviceItem.getMetrics().getIcon(), mHubConnectionHolder.getZWayApi());
+            } else {
+                iconPath = loadIcon(deviceItem.getMetrics().getIcon(), zwayApi);
+            }
+            if (iconPath != null) {
+                Log.i(Params.LOGGING_TAG, "Downloading icon successful: " + iconPath);
+                deviceItem.setIcon(iconPath);
+
+                mDatabaseHandler.updateDevice(deviceItem);
+            }
+        }
+    }
+
+    /**
+     * @param file for example /ZAutomation/api/v1/load/modulemedia/Astronomy/altitude_day.png
+     * @param zwayApi
+     */
+    private String loadIcon(String file, IZWayApi zwayApi) {
+        if (zwayApi == null) {
+            Log.w(Params.LOGGING_TAG, "Downloading image failed: Z-Way not connected");
+            return null;
+        }
+
+        try {
+            Bitmap icon = getIconAsBitmap(zwayApi.getTopLevelUrl() + file,
+                    "ZWAYSession=" + zwayApi.getZWaySessionId() + "; ZBW_SESSID=" + zwayApi.getZWayRemoteSessionId());
+
+            if (icon == null) {
+                Log.w(Params.LOGGING_TAG, "Downloading image failed: Bitmap is null!");
+                return null;
+            }
+
+            String iconPath = mContext.getFilesDir().getPath() + "/" + Util.saveImage(mContext, icon, "icon_" + file, "");
+            if (iconPath == null) {
+                Log.w(Params.LOGGING_TAG, "Downloading image failed: Can't store bitmap as file!");
+            }
+
+            Log.i(Params.LOGGING_TAG, "Downloading image successful: " + iconPath);
+
+            return iconPath;
+        } catch (IOException e) {
+            Log.e(Params.LOGGING_TAG, "Downloading image failed: " + e.getMessage(), e);
+        }
+
+        return null;
+    }
+
+    private Bitmap getIconAsBitmap(String urlString, String cookies) throws IOException {
+        URL url = new URL(urlString);
+        URLConnection connection =  url.openConnection();
+
+        Log.i(Params.LOGGING_TAG, "Downloading image: " + urlString);
+
+        HttpURLConnection httpConnection = null;
+        InputStream inputStream = null;
+
+        try {
+            httpConnection = (HttpURLConnection) connection;
+            httpConnection.setDoOutput(true);
+            httpConnection.setDoInput(true);
+            httpConnection.setReadTimeout(60000 /* milliseconds */);
+            httpConnection.setConnectTimeout(65000 /* milliseconds */);
+            httpConnection.setRequestMethod("GET");
+            if (!cookies.isEmpty()) {
+                httpConnection.setRequestProperty("Cookie", cookies);
+            }
+            httpConnection.connect();
+
+            if (httpConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                inputStream = httpConnection.getInputStream();
+
+                // Default solution
+                //BitmapFactory.Options options = new BitmapFactory.Options();
+                //options.inSampleSize = 2;
+                //return BitmapFactory.decodeStream(new FlushedInputStream(inputStream), null, options);
+
+                // Stream with skip method
+                //return BitmapFactory.decodeStream(new FlushedInputStream(inputStream));
+
+                // Wrap with buffered input stream
+                return BitmapFactory.decodeStream(new BufferedInputStream(inputStream));
+            } else {
+                Log.e(Params.LOGGING_TAG, "Downloading image failed: " + httpConnection.getResponseCode());
+            }
+        } catch (Exception e) {
+            Log.e(Params.LOGGING_TAG, "Downloading image failed: " + e.getMessage(), e);
+        } finally {
+            httpConnection.disconnect();
+            try {
+                inputStream.close();
+            } catch (Exception e) { }
+        }
+        return null;
     }
 
     /**

@@ -209,6 +209,23 @@ public class DevicesRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
                     Log.w(Params.LOGGING_TAG, "Set custom icon failed!");
                 }
             });
+        } else if (!itemBaseViewHolder.mItemView.getDeviceItem().getIcon().equals("")) {
+            Picasso.with(mContext).load(new File(itemBaseViewHolder.mItemView.getDeviceItem().getIcon())).resize(96, 96).into(itemBaseViewHolder.mIcon, new Callback() {
+                @Override
+                public void onSuccess() {
+                    Bitmap imageBitmap = ((BitmapDrawable) itemBaseViewHolder.mIcon.getDrawable()).getBitmap();
+                    RoundedBitmapDrawable imageDrawable = RoundedBitmapDrawableFactory.create(mContext.getResources(), imageBitmap);
+                    imageDrawable.setCircular(true);
+                    imageDrawable.setCornerRadius(Math.max(imageBitmap.getWidth(), imageBitmap.getHeight()) / 2.0f);
+                    itemBaseViewHolder.mIcon.setImageDrawable(imageDrawable);
+                }
+
+                @Override
+                public void onError() {
+                    Util.addProtocol(mContext, new ProtocolItem(mContext, ProtocolType.WARNING, "Set icon failed!", "Device"));
+                    Log.w(Params.LOGGING_TAG, "Set custom icon failed!");
+                }
+            });
         } else {
             switch (itemBaseViewHolder.mItemView.getDeviceItem().getMetrics().getIcon()) {
                 case ICON_TEMPERATURE:
