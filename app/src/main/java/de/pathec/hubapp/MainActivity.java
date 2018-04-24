@@ -415,8 +415,8 @@ public class MainActivity extends AppCompatActivity
                         new PrimaryDrawerItem().withName(getString(R.string.fragment_elements_title)).withIcon(GoogleMaterial.Icon.gmd_list).withIdentifier(2),
                         new PrimaryDrawerItem().withName(getString(R.string.fragment_locations_title)).withIcon(GoogleMaterial.Icon.gmd_room).withIdentifier(3),
                         new PrimaryDrawerItem().withName(getString(R.string.fragment_notifications_title)).withIcon(GoogleMaterial.Icon.gmd_notifications).withIdentifier(4),
-                        new PrimaryDrawerItem().withName(getString(R.string.fragment_settings_title)).withIcon(GoogleMaterial.Icon.gmd_settings).withIdentifier(5),
-                        new PrimaryDrawerItem().withName(getString(R.string.fragment_help_title)).withIcon(GoogleMaterial.Icon.gmd_help).withIdentifier(6)
+                        new PrimaryDrawerItem().withName(getString(R.string.fragment_settings_title)).withIcon(GoogleMaterial.Icon.gmd_settings).withIdentifier(5)
+                        //new PrimaryDrawerItem().withName(getString(R.string.fragment_help_title)).withIcon(GoogleMaterial.Icon.gmd_help).withIdentifier(6)
 
 
                         // Badge: .withBadge("42").withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.accent))
