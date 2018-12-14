@@ -20,6 +20,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -541,7 +542,10 @@ public class Intro extends AppCompatActivity implements
                 ZWayHubConfiguration configuration = new ZWayHubConfiguration();
 
                 try {
-                    Map<String, List<String>> params = Util.splitQuery(item.rawValue);
+                    byte[] qrCode = Base64.decode(item.rawValue, Base64.DEFAULT);
+                    String qrCodeAsString = new String(qrCode, "UTF-8");
+
+                    Map<String, List<String>> params = Util.splitQuery(qrCodeAsString);
 
                     for (Map.Entry<String, List<String>> entry : params.entrySet()) {
                         switch (entry.getKey().trim().toLowerCase()) {

@@ -201,7 +201,7 @@
     <string name="fragment_legal">Rechtliches</string>
     <string name="fragment_settings_general_about">Über</string>
     <string name="fragment_settings_general_open_source_btn">Open Source Software</string>
-    <string name="fragment_settings_general_open_source_message">Z-Way App Version 1.4 (18.06.2017)\r\n\r\nCopyright &#169; 2017 Z-Wave.Me\r\n\r\nDie Z-Way App benutzt Open Source Software:</string>
+    <string name="fragment_settings_general_open_source_message">Z-Way App Version 1.5 (14.12.2018)\n\nCopyright &#169; 2018 Z-Wave.Me\n\nDie Z-Way App benutzt Open Source Software:</string>
     <string name="fragment_help_overview_title">Funktionen</string>
     <string name="fragment_help_title">Hilfe</string>
     <string name="fragment_help_navigation_title">Navigation</string>
@@ -652,6 +652,8 @@
     <string name="fragment_settings_general_changelog">
         <![CDATA[
             "
+                <p><i>Version 1.5</i></p>
+                <p>Aktualisierung der QR Code Komponente.</p>
                 <p><i>Version 1.4</i></p>
                 <p>Anzeigen der Gerätehistorie beim Antippen eines Multilevel Widgets. Wenn keine Daten vorhanden sind, wird die Ereignisansicht geöffnet.</p>
                 <p>Anzeigen der Ereignisansicht beim Antippen eines binären oder diskreten Sensor-Widgets.</p>

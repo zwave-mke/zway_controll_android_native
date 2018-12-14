@@ -230,7 +230,7 @@
     <string name="fragment_settings_general_protocol_btn">Show protocol</string>
 
     <string name="fragment_settings_general_about">About</string>
-    <string name="fragment_settings_general_open_source_message">Z-Way App Version 1.4 (18.06.2017)\r\n\r\nCopyright &#169; 2017 Z-Wave.Me\r\n\r\nZ-Way App is build using open source software:</string>
+    <string name="fragment_settings_general_open_source_message">Z-Way App Version 1.5 (14.12.2018)\n\nCopyright &#169; 2018 Z-Wave.Me\n\nZ-Way App is build using open source software:</string>
     <string name="fragment_settings_general_open_source_btn">Open source software</string>
 
     <string-array name="start_views">
@@ -246,6 +246,8 @@
     <string name="fragment_settings_general_changelog">
         <![CDATA[
             "
+                <p><i>Version 1.5</i></p>
+                <p>Update QR code decoding</p>
                 <p><i>Version 1.4</i></p>
                 <p>Display the history when tap on a multilevel sensor widget. If no data available, the notification view is displayed.</p>
                 <p>Display the notification view when tap on a binary and discrete sensor widget.</p>
